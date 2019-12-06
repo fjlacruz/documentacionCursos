@@ -1,0 +1,106 @@
+==============================
+API Rest full Laravel 6
+=============================
+
+Requisitos:
+* Composer
+* virtualBox
+* vagrant
+* homestead    /   composer require laravel/homestead
+* Github
+* Node npm
+* Postman
+
+================================================================================
+Editor recomendado sublime text 3
+instalar paquetes:     ctrl+shif+p  ->install    ->sublimecodeintel
+                                                 ->sublimelinter
+                                                 ->php conpanion
+
+================================================================================
+
+Instalar:
+composer require laravel/homestead
+composer require laravel/ui --dev
+php vendor/bin/homestead make
+
+================================================================================
+configuracion del entorno (base de datos)(.env)
+
+================================================================================
+archivos relacionados conm las rutas:
+routes/web (aplicaciones web)
+rutes/api (api)
+
+RouteServiceProvider.php
+
+para ver las rutas: php artisan route:list
+================================================================================
+
+
+
+Creando Modelos (siempre en singular)
+php artisan make:model Buyer
+php artisan make:model Product -m (-m para indicar que hara una migracion)
+
+================================================================================
+
+Creando Controladores
+
+php artisan make:controller user/UserController -r (-r para crear un controlador de tipo recurso)
+php artisan make:controller Category/CategoryController -r -m Category (controlador de tipo recurso con inyeccion implicita de modelo)
+
+
+================================================================================
+Configuracion de correos
+composer require guzzlehttp/guzzle
+
+En el archivo .env agregar: 
+
+
+
+
+
+https://programacionymas.com/blog/como-enviar-mails-correos-desde-laravel
+lacj wzuw okiw icss
+
+
+
+
+
+Para el caso de apis se debe crear un controlador ApiController y todos los controladores extenderan de este(solo en caso de API), tambien se debe crear un carpeta traits dentro de app y crear un archivo ApiResponser.php que contendra las respuestas de la api
+
+================================================================================
+Creando Migraciones
+
+Se deben completar con los campos que hagan falta en los archivos creados previamente en database/migrations
+
+php artisan make:migration create_posts_table
+
+Estructura para una tabla pivote (relacion m:m):
+php artisan make:migration category_product_table --create=category_product
+
+al final ejecutamos php artisan migrate
+
+
+
+
+
+================================================================================
+Postman
+
+Para obtener listado GET
+Para obtetner un registro especifico GET
+Para registro POST
+Para update PUT o PATCH (x-www-form-urlencode)
+Para eliminar DELETE
+
+
+
+=======================
+Para subir a produccion
+=======================
+
+Lo primero es comprimir tu proyecto local en .zip y lo arrastrarás fuera de la carpeta de “public_html” en el administrador de archivos, el archivo zip se empezará a subir directamente al servidor, una vez se termine de subir, vas a descomprimir el zip dando clic derecho en el archivo y en la opción descomprimir, una vez tengas todas las carpetas listas en el servidor, moverás todo el contenido de la carpeta “public” a la carpeta “public_html”, eliminas la carpeta vacia “public” y listo o simplemente renombras la carpeta public a public_html.
+
+https://www.nigmacode.com/laravel/Subir-proyecto-laravel-a-hosting
