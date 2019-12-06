@@ -1,0 +1,9 @@
+git pull origin master
+git checkout -b nombre_rama
+git add .
+git commiot -m 'comentario'
+git push origin nombre_rama
+git checkout master
+git pull origin master
+git merge nombre_rama
+git push origin master
