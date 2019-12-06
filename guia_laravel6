@@ -121,6 +121,8 @@ Para trabajar con vue los cambios deben hacerce en js/app.js y ejecutar npm inst
 para no estar ejecutando npm run dev a cada momento para ver los cambios ejecutmos npm run watch para que se autodetecten los cambios 
 
 
+Guia agregada a git
+
 
 
 
